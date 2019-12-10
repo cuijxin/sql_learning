@@ -157,4 +157,6 @@ USE LNTU;
 
 -- SELECT LOWER(bookname) AS BOOK, quantity, book_price FROM BookItem;
 
-SELECT concat(rtrim(tname), ' (', rtrim(dname), ')') AS info, age FROM Teacher ORDER BY info;
+-- SELECT concat(rtrim(tname), ' (', rtrim(dname), ')') AS info, age FROM Teacher ORDER BY info;
+
+SELECT SUM(sal) BOYSAL FROM Teacher WHERE tsex = '男';
