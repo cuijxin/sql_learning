@@ -142,3 +142,19 @@ USE LNTU;
 -- SELECT bookname, book_price, quantity, book_price*quantity FROM BookItem ORDER BY bookname;
 
 -- SELECT cno, cname, ctime, scount, cast(ctest AS CHAR(11)) AS Chardate FROM Course
+
+-- SELECT cname, ctime, 
+-- CASE
+--   WHEN ctime >= 40 THEN 5
+--   WHEN ctime >= 30 THEN 4
+--   WHEN ctime >= 20 THEN 3
+--   ELSE 2
+-- END AS credit
+-- FROM Course
+-- ORDER BY credit
+
+-- SELECT UPPER(bookname) AS BOOK, quantity, book_price FROM BookItem;
+
+-- SELECT LOWER(bookname) AS BOOK, quantity, book_price FROM BookItem;
+
+SELECT concat(rtrim(tname), ' (', rtrim(dname), ')') AS info, age FROM Teacher ORDER BY info;
