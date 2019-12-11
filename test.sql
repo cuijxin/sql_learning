@@ -159,4 +159,8 @@ USE LNTU;
 
 -- SELECT concat(rtrim(tname), ' (', rtrim(dname), ')') AS info, age FROM Teacher ORDER BY info;
 
-SELECT SUM(sal) BOYSAL FROM Teacher WHERE tsex = '男';
+-- SELECT SUM(sal) BOYSAL FROM Teacher WHERE tsex = '男';
+
+-- SELECT SUM(sal) AS OLDSAL FROM Teacher WHERE age >= 40;
+
+SELECT COUNT(*) AS TOTALITEM FROM Teacher;
