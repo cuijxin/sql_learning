@@ -163,4 +163,173 @@ USE LNTU;
 
 -- SELECT SUM(sal) AS OLDSAL FROM Teacher WHERE age >= 40;
 
-SELECT COUNT(*) AS TOTALITEM FROM Teacher;
+-- SELECT COUNT(*) AS TOTALITEM FROM Teacher;
+
+-- SELECT COUNT(tno) AS TOTAL_TNO, count(tname) AS TOTAl_NAME, count(sal) TOTAL_SAL FROM Teacher;
+
+-- SELECT 
+--     COUNT(tno) AS TOTAL_TNO, 
+--     COUNT(tname) AS TOTAl_NAME, 
+--     COUNT(sal) TOTAL_SAL, 
+--     COUNT(CONCAT(CAST(tno AS VARCHAR(5)) ,tname) AS T_NONAME
+-- FROM Teacher
+
+-- SELECT COUNT(*) AS TOTALWOMEN
+-- FROM Teacher
+-- WHERE tsex='女';
+
+-- SELECT MAX(age) AS MAXAGE FROM Teacher
+
+-- SELECT tname, dname, tsex, MAX(age) AS MAXAGE FROM Teacher
+
+-- SELECT AVG(age) AS AVGCOMPUTER_AGE
+-- FROM Teacher
+-- WHERE dname='计算机';
+
+-- SELECT 
+--     *
+-- FROM Teacher
+-- WHERE age >= (SELECT AVG(age) FROM Teacher)
+-- ORDER BY age;
+
+-- SELECT COUNT(ALL sal) AS ALLSAL_COUNT FROM Teacher;
+
+-- SELECT COUNT(DISTINCT sal) AS DISTINCTSAL_COUNT FROM Teacher;
+
+-- SELECT 
+--     COUNT(*) AS num_items,
+--     MAX(sal) AS max_sal,
+--     MIN(age) AS min_age,
+--     SUM(sal)/COUNT(sal) AS avg_sal,
+--     AVG(DISTINCT sal) AS disavg_sal
+-- FROM
+--     Teacher;
+
+-- SELECT
+--     AVG(sal) AS boyavg_sal
+-- FROM 
+--     Teacher
+-- WHERE 
+--     tsex='男';
+
+-- SELECT CONCAT(tsex, '教师') AS TEACHER, AVG(sal) AS avg_sal
+-- FROM Teacher
+-- GROUP BY tsex;
+
+-- SELECT 
+--     dname, 
+--     tsex,
+--     COUNT(*) AS TOTAL_NUM
+-- FROM
+--     Teacher
+-- GROUP BY 
+--     dname,
+--     tsex
+-- ORDER BY 
+--     dname;
+
+-- SELECT 
+--     dname, 
+--     tsex,
+--     COUNT(*) AS TOTAL_NUM
+-- FROM
+--     Teacher
+-- GROUP BY 
+--     dname,
+--     tsex 
+-- WITH ROLLUP;
+
+-- SELECT 
+--     dname,
+--     tsex,
+--     COUNT(*) AS TOTAL_NUM
+-- FROM
+--     Teacher
+-- GROUP BY 
+--     tsex, dname
+-- WITH ROLLUP;
+
+-- SELECT
+--     dname,
+--     tsex,
+--     COUNT(*) AS TOTAL_NUM
+-- FROM 
+--     Teacher
+-- GROUP BY
+--     dname,
+--     tsex
+-- WITH CUBE;
+
+-- SELECT 
+--     sal,
+--     COUNT(*) AS TOTAL_NUM
+-- FROM 
+--     Teacher
+-- GROUP BY
+--     sal;
+
+-- SELECT 
+--     dname,
+--     COUNT(*) AS num_teacher
+-- FROM
+--     Teacher
+-- GROUP BY
+--     dname
+-- HAVING 
+--     COUNT(*) >= 2
+
+-- SELECT 
+--     dname,
+--     COUNT(tsex) AS girl_num
+-- FROM
+--     Teacher
+-- WHERE
+--     tsex = '女'
+-- GROUP BY
+--     dname
+
+
+-- SELECT 
+--     dname,
+--     COUNT(tsex) AS girl_num
+-- FROM
+--     Teacher
+-- GROUP BY
+--     dname
+-- HAVING
+--     tsex = '女';
+
+-- SELECT 
+--     dname,
+--     COUNT(tsex) AS girl_num
+-- FROM
+--     Teacher
+-- WHERE
+--     tsex = '女'
+-- GROUP BY
+--     dname
+-- HAVING
+--     COUNT(tsex)>=2;
+
+-- SELECT 
+--     COUNT(tsex) AS num_girl
+-- FROM
+--     Teacher
+-- WHERE
+--     tsex='女'
+-- HAVING
+--     COUNT(tsex) > 4
+
+SELECT
+    dname,
+    COUNT(tsex) AS num_girl
+FROM
+    Teacher
+WHERE
+    tsex='女'
+GROUP BY
+    dname
+HAVING 
+    COUNT(tsex) >= 2
+ORDER BY
+    num_girl
